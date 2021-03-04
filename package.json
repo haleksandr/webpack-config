@@ -1,0 +1,14 @@
+{
+  "name": "webpack-config",
+  "version": "1.0.0",
+  "description": "my config webpack - lesson 5 db2-limited internship",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "Aleksandr Holoven",
+  "license": "ISC"
+}
