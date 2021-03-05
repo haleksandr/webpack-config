@@ -10,6 +10,17 @@ const isDev = !isProd;
 const filename = (extension) =>
   isDev ? `bundle.${extension}` : `bundle.[hash].${extension}`;
 
+const jsLoaders = () => {
+  const loaders = [
+    {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env'],
+      },
+    },
+  ];
+};
+
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
@@ -26,8 +37,8 @@ module.exports = {
   },
   devtool: isDev ? 'source-map' : false,
   devServer: {
-    port: 4545,
-    hot: isDev,
+    port: 3000,
+    hot: true,
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -56,12 +67,7 @@ module.exports = {
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
+        use: jsLoaders(),
       },
     ],
   },
